@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Nagy Gergely Attila">
+    <meta name="keywords" content="">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/mainstyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/menustyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/rgfieldstyle.css') }}">
+    <title>Aseri Nakava</title>
+</head>
+<body>
+    <header>
+        <menu>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    {% if current_user.is_authenticated %}
+                        <li>
+                            <a href="{{ url_for('routes.home') }}">Home</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{{ url_for('routes.home') }}">Home</a>
+                        </li>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
+                        <li>
+                            <a href="{{ url_for('account.logout') }}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{{ url_for('account.login') }}">Login</a>
+                        </li>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
+                        fityisz ar orrod alá
+                    {% else %}
+                        <li>
+                            <a href="{{ url_for('account.register') }}">Register</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </menu>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">
+                        <span class="flash-message">{{ message }}</span>
+                        <button class="close-btn" onclick="this.parentElement.style.display='none';">&times;</button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block header %}{% endblock %}
+    </header>
+
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}{% endblock %}
+    </footer>
+    
+</body>
+</html>

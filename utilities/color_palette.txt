@@ -1,0 +1,2 @@
+Hex Codes for background: #090809, #7F0405, #BA0203, #F40000, #FF2F28
+Hex codes for text: #F5FEFD

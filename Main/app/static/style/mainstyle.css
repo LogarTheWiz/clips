@@ -1,0 +1,55 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    font-weight: 400;
+    flex-direction: column;
+    background-color: #090809;
+}
+
+a, p, h1, h2, h3, label, button{
+    color: #F5FEFD;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+flash {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #7F0405;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    color: #F5FEFD;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #f7a440;
+    transform: scale(1.1);
+}
+
+
+.footer {
+    background-color: #333;
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.badge {
+    text-align: center;
+    padding: 5px;
+}
