@@ -17,46 +17,16 @@
         <menu>
             <nav class="navbar">
                 <ul class="nav-list">
-                    {% if current_user.is_authenticated %}
-                        <li>
-                            <a href="{{ url_for('routes.home') }}">Home</a>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="{{ url_for('routes.home') }}">Home</a>
-                        </li>
-                    {% endif %}
-                    {% if current_user.is_authenticated %}
-                        <li>
-                            <a href="{{ url_for('account.logout') }}">Logout</a>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="{{ url_for('account.login') }}">Login</a>
-                        </li>
-                    {% endif %}
-                    {% if current_user.is_authenticated %}
-                        fityisz ar orrod alá
-                    {% else %}
-                        <li>
-                            <a href="{{ url_for('account.register') }}">Register</a>
-                        </li>
-                    {% endif %}
+                    <li>
+                        <a href="{{ url_for('routes.home') }}">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('routes.home') }}">Home</a>
+                    </li>
                 </ul>
             </nav>
         </menu>
-
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="flash {{ category }}">
-                        <span class="flash-message">{{ message }}</span>
-                        <button class="close-btn" onclick="this.parentElement.style.display='none';">&times;</button>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-        {% block header %}{% endblock %}
     </header>
 
     <main>
