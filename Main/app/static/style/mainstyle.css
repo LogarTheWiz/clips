@@ -4,6 +4,11 @@ body {
     font-weight: 400;
     flex-direction: column;
     background-color: #090809;
+    margin: 0;
+}
+
+div {
+    border: 1px solid white;
 }
 
 a, p, h1, h2, h3, label, button{
@@ -40,9 +45,10 @@ flash {
 
 
 .footer {
-    background-color: #333;
+    background-color: #413e3e33;
     padding: 15px 0;
     text-align: center;
+    border-top: 3px solid #7F0405;
 }
 
 footer {
@@ -53,3 +59,58 @@ footer {
     text-align: center;
     padding: 5px;
 }
+
+.navbar {
+    padding: 15px 5px 15px 5px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    padding: 10px 20px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-list a:hover {
+    color: #BA0203;
+    transform: scale(1.1);
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #BA0203;
+    transition: width 0.3s, left 0.3s;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+}
+
