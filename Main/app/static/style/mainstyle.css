@@ -7,10 +7,6 @@ body {
     margin: 0;
 }
 
-div {
-    border: 1px solid white;
-}
-
 a, p, h1, h2, h3, label, button{
     color: #F5FEFD;
 }

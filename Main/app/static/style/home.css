@@ -4,7 +4,26 @@
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    margin: 10px 10px 10px 10px;
   }
 
 .child {
+    margin: 10px 10px 10px 10px;
+    border-radius: 5%;
+    border: 3px solid #7F0405;
+    padding: 10px 10px 10px 10px;
+}
+
+video {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+div {
+    
+}
+
+#loGlobalOffensive
+{
+    width: 50%;
 }

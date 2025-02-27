@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block header %}{% endblock %}
+
+{% block body %}
+    <div>
+        <iframe src="{{ url_for('static', filename='documentation/documentation.pdf') }}" frameborder="0"></iframe>
+    </div>
+{% endblock %}
+
+{% block footer %}{% endblock %}  
